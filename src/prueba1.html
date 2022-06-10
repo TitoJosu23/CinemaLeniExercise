@@ -3,13 +3,10 @@
 <head>
     <title>Cinema</title>
     <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
     <link rel="stylesheet" href="style.css">
-    <script type="text/javascript" src="cinema.js"></script>
 </head>
 <body>
-    
+    <div class="container">
     <h1>Sala de Cine</h1>
 
     <div class="viewer">
@@ -36,18 +33,27 @@
     <div class="container_movie">
         <h4>Informacion sobre la Pelicula</h4>
         <p id="infoMovie"></p>
-        <button class="btn" value="Button" onclick="info_movie()">Mostrar</button> 
-    </div> 
+        <button class="btn" value="Button" onclick="info_movie(), alert1()">Mostrar</button>
+    </div>
 
-    <div> 
-        <h2 id="infoCines"></h2>
-    </div> 
+    <div>
+        <h3 id="infoCines"></h3>
+    </div>
 
-    <div> 
-        <h2 id="qlq">...</h2>
-    </div> 
+    <div>
+        <h2 id="info"></h2> 
+    </div>
 
-    <h2>Test</h2> 
+    <div>
+        <p id="asiento-disp" style="visibility: hidden;"></p>
+    </div>
 
-</body> 
-</html> 
+    <div class="infoColors">
+        <p class="red"> <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Punto_rojo.png" style="width: 30px;" >  Asiento ocupado</p>
+        <p class="green"> <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Punto_verde.png" style="width: 30px;"> Asiento desocupado</p>
+    </div>
+    </div>
+
+    <script type="text/javascript" src="cinema.js"></script>
+</body>
+</html>
