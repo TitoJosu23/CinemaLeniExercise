@@ -1,14 +1,18 @@
 body{
-    background-color: black;
+    background-color: rgb(22, 22, 58);
     color: white;
-    width: 500px;
+    margin-left: 10px;
+}
+.container{
     margin: auto;
-    text-align: center;
-    /* zoom: 1.3; */
+    width: 70%;
+    margin-left: 30%;
+    margin-top: 5%;
 }
 table{
-    margin-top: 30px ;
-    margin-left: 100px ;
+    position: absolute ;
+    top: 10%;
+    right: 20%;
 }
 #age{
     margin-left: 20px;
@@ -18,4 +22,12 @@ table{
 #money{
     margin-left: 9px;
     margin-bottom: 20px;
+}
+.infoColors{
+    position: absolute;
+    top: 59%;
+    right: 30%;
+}
+.red{
+    margin-right: 23px;
 }
