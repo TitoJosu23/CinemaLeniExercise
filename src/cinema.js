@@ -9,16 +9,17 @@ function iniciobutaca(numerob, filab, estadob, but){
     but.fila[numerob]     = filab;
     but.estado[numerob]   = estadob;
 }
-
 function cine(fila, butfila, butacac){
     this.filas      = fila;
     this.butacas    = butacac;
     this.butacafila = butfila;
 }
-
-function funciononcick(valor){
-    micine.butacas.estado[valor] = 2;
-    document.getElementById(valor).src = "seleccionado.png";
+function asientoDisponible(){
+    var disponibilidad = document.getElementById("infoCines");
+    disponibilidad.innerHTML = '<p>Este Asiento se encuentra disponible. </p>';
+}
+function funciononcick(){ 
+    asientoDisponible();
 }
 
 // Alerta
@@ -36,6 +37,7 @@ var butfila = 9;
 butacas = new butaca();
 
 // iNICIOALIZAR LAS BUTACAS
+
 var num2 = 0;
 
 for(var filai = 1; filai <= fila; filai++){
@@ -61,12 +63,9 @@ function mostrar(){
         for(var butacai = 1; butacai <= micine.butacafila; butacai++ ){
 
             numero ++;
-            // console.log(numero);
-            // console.log("estado numerob");
-            // console.log(micine);
             if(micine.butacas.estado[numero] == 0){
 
-                document.write("<td><img  id=' ");
+                document.write("<td><img  id='");
                 document.write(numero);
                 document.write(" ' onclick='funciononcick(");
                 document.write(numero);
@@ -84,8 +83,6 @@ document.write("</table>");
 
 mostrar();
 
-// Separacion AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-
 function viewer() {
     var name = document.getElementById("name").value;
     var age = document.getElementById("age").value;
@@ -94,7 +91,6 @@ function viewer() {
 
     document.getElementById("infoViewer").innerHTML = show2; 
 }
-
 
 function info_cinema() 
 {
@@ -105,10 +101,6 @@ var show = "<b>Pelicula:</b> "+film+"<br><b>Precio:</b> "+price;
     document.getElementById("infoCine").innerHTML = show; 
 }
 
-
-
-
-
 function info_movie () {
     var title="Pride & Prejudice";
     var time="2 h 6 min";
@@ -117,72 +109,38 @@ function info_movie () {
     var show1 ="<b>Titulo de la Pelicula:</b> "+title+"<br><b>Duracion:</b> "+time+"<br><b>Edad minima:</b> "+min_age+" años<br><b>Director:</b> "+director;
 
     var edadS = "<b>Transacción Exitosa!! </br>Disfrute de su funcion</b>"
-    var edadN = "<b>No tienes la edad requerida para ver esta pelicula</b>"
-    var error = "<b>Error, Algun dato introducido es erroneo...</b>"
+    var datosErroneos = "<b>(Verifique los datos e intente nuevamente)</b>"
+    var error = "<b>(Error, Algun dato introducido es erroneo...)</b>"
     
-    var precio = document.querySelector("#money").value;
-    document.getElementById("qlq").innerHTML = precio;
-    console.log(precio);
+    var userMoney = document.querySelector("#money").value;
+    document.getElementById("info").innerHTML = userMoney;
 
-    var minAge = document.querySelector("#age").value;
-    document.getElementById("qlq").innerHTML = minAge;
+    var age = document.querySelector("#age").value;
+    document.getElementById("info").innerHTML = age;
 
-    // edad usario minAge
+    var collection = document.getElementsByTagName("h3");
+    var getText = document.getElementById("asiento-disp").innerHTML = collection[1].innerHTML;
+    var butacaDisp = getText
 
-    if (minAge >= min_age && minAge < 120 && precio >= 100) {
-        document.getElementById("qlq").innerHTML = edadS;
-      } else if (minAge < min_age && minAge > 0 && precio < 100) {
-        document.getElementById("qlq").innerHTML = edadN;
+    // validaciones
+
+    if (butacaDisp === "<p>Este Asiento se encuentra disponible. </p>"){
+        butacaDisp = true;
+    }
+    else if(butacaDisp === "Este asiento está Ocupado, por favor seleccione un asiento Disponible (Color Verde)"){
+        butacaDisp = false;
+    }
+    else{
+        console.log(" ");
+    }
+
+    if (age >= min_age && age < 110 && userMoney >= 100 && butacaDisp == true) {
+        document.getElementById("info").innerHTML = edadS;
+      } else if (age < min_age && age > 1 || userMoney < 100 || butacaDisp == false) {
+        document.getElementById("info").innerHTML = datosErroneos;
       } else {
-        document.getElementById("qlq").innerHTML = error;
+        document.getElementById("info").innerHTML = error;
       };
     
-    
-
-
-
     document.getElementById("infoMovie").innerHTML = show1; 
 }
-
-
-
-
-
-
-
-
-function cines () {
-
-var filaAsiento, columAsiento, c=0;
-
-butacas = new Array(9);
-for (var i=0;i<9;i++)
-butacas[i]=new Array(8);
-for (var i=0;i<9;i++)
-for (var j=0;j<8;j++)
-butacas[i][j]=0;
-
-while(c<=72){
-    filaAsiento=document.getElementById("filaAsiento").value;
-    columAsiento=document.getElementById("columAsiento").value;
-
-        if ((filaAsiento>0 && filaAsiento<=8)&&(columAsiento>0 && columAsiento<=9)){
-
-            if(butacas[(filaAsiento-1)][(columAsiento-1)]==0){
-                butacas[(filaAsiento-1)][(columAsiento-1)]=1;
-                c=c+1;
-                document.getElementById("reserva").innerHTML = "Reserva Exitosa";
-            } else {
-                document.getElementById("reserva").innerHTML = "Butaca Ocupada";
-            }
-            } 
-        }
-    for (var i=0;i<9;i++){
-        for (var j=0;j<40;j++){
-            document.write(butacas[i][j,"\t"]);
-        }
-    }
-}
-
-// TERCERA PARTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
-
