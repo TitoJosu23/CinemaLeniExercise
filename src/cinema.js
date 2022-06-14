@@ -141,7 +141,5 @@ function info_movie () {
       } else {
         document.getElementById("info").innerHTML = error;
       };
-
 document.getElementById("infoMovie").innerHTML = show1; 
-
 }
