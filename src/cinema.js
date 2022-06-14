@@ -96,7 +96,7 @@ function info_cinema()
 {
 var film="Avengers: Infinity War";
 var price=100;
-var show = "<b>Pelicula:</b> "+film+"<br><b>Precio:</b> "+price;
+var show = "<b>Pelicula:</b> "+film+"<br><b>Precio:</b> "+price; 
 
     document.getElementById("infoCine").innerHTML = show; 
 }
