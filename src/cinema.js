@@ -113,7 +113,7 @@ function info_movie () {
     var error = "<b>(Error, Algun dato introducido es erroneo...)</b>"
     
     var userMoney = document.querySelector("#money").value;
-    document.getElementById("info").innerHTML = userMoney;
+    document.getElementById("info").innerHTML = userMoney; 
 
     var age = document.querySelector("#age").value; 
     document.getElementById("info").innerHTML = age;
