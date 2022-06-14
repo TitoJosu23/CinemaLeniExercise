@@ -115,7 +115,7 @@ function info_movie () {
     var userMoney = document.querySelector("#money").value;
     document.getElementById("info").innerHTML = userMoney;
 
-    var age = document.querySelector("#age").value;
+    var age = document.querySelector("#age").value; 
     document.getElementById("info").innerHTML = age;
 
     var collection = document.getElementsByTagName("h3");
