@@ -104,8 +104,8 @@ var show = "<b>Pelicula:</b> "+film+"<br><b>Precio:</b> "+price;
 function info_movie () {
     var title="Pride & Prejudice";
     var time="2 h 6 min";
-    var min_age = 16; 
-    var director="Joe Wright"; 
+    var min_age = 16;
+    var director="Joe Wright";
     var show1 ="<b>Titulo de la Pelicula:</b> "+title+"<br><b>Duracion:</b> "+time+"<br><b>Edad minima:</b> "+min_age+" años<br><b>Director:</b> "+director;
 
     var edadS = "<b>Transacción Exitosa!! </br>Disfrute de su funcion</b>"
